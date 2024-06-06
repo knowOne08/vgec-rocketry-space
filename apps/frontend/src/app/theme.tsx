@@ -1,8 +1,7 @@
-import {createTheme, responsiveFontSizes } from "@mui/material";
+import { createTheme, responsiveFontSizes } from '@mui/material';
 
 export const theme = responsiveFontSizes(
   createTheme({
-    
     spacing: 4,
     typography: {
       fontFamily: ['Roboto', 'Raleway', 'Open Sans'].join(','),
@@ -21,7 +20,6 @@ export const theme = responsiveFontSizes(
       },
     },
     palette: {
-
       background: {
         default: '#009900', // green
       },
@@ -39,14 +37,14 @@ export const theme = responsiveFontSizes(
       },
       text: {
         primary: '#000000', // black
-        secondary: '#FFFFFF', // white
+        secondary: '#FFFFFF', // white,
       },
       primary: {
-        main : "#222831", //black
-        dark: "#31363F",  //dark gray
-        light: "#76ABAE", //teal
-        contrastText: "#EEEEEE", // light gray
+        main: '#222831', //black
+        dark: '#31363F', //dark gray
+        light: '#76ABAE', //teal
+        contrastText: '#a2a4a8', // light gray
       },
     },
-  })
+  }),
 );
