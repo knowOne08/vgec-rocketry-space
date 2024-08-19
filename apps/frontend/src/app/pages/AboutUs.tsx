@@ -5,23 +5,22 @@ import {
   Typography,
   useMediaQuery,
   Button,
-  Box
+  Box,
 } from "@mui/material";
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { motion } from "framer-motion";
 import { useCustomNavigate } from "../utils/useCustomNavigate"
 import DhairyaWorkingVideo from "/DhairyaWorking2.mp4";
 import IsroVisit from "/IsroMeet.jpeg";
-import AnantaArrow from "/AnantaArrow.mp4"
-import AnantaArrow2 from "/AnataArrow2.mp4"
-import Aflatoon from '/Aflatoon.jpeg'
+import AnantaArrow from "/AnantaArrow.mp4";
+import AnantaArrow2 from "/AnataArrow2.mp4";
+import Aflatoon from "/Aflatoon.jpeg";
 // import Map from "/map.jpg";
 import { useInView } from "react-intersection-observer";
-import { Footer } from "../components/Footer"
+import { Footer } from "../components/Footer";
 import { theme } from "../theme";
 import Galleries from "../pages/gallery";
-
 
 // Team Members
 
@@ -44,61 +43,62 @@ const teamMembers = [
   // { name: "Member 16", role: "Role 16", img: "path/to/img16.jpg" }
 ];
 
-
 // fade part
 
 export const AboutUs: React.FC = () => {
   useEffect(() => {
-    document.title = "ABOUT | VRT"
+    document.title = "ABOUT | VRT";
     setTimeout(() => {
       setShowComponent(false);
     }, 1500);
 
     setTimeout(() => {
-      setSmallScreenBackgroundVideo(AnantaArrow2)
-    }, 20 * 1000)
-  }, [])
+      setSmallScreenBackgroundVideo(AnantaArrow2);
+    }, 20 * 1000);
+  }, []);
 
   const [showComponent, setShowComponent] = useState(true);
 
-  const [smallScreenBackgroundVideo, setSmallScreenBackgroundVideo] = useState<string | undefined>(AnantaArrow);
+  const [smallScreenBackgroundVideo, setSmallScreenBackgroundVideo] = useState<
+    string | undefined
+  >(AnantaArrow);
 
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { ref: textRef, inView: textInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { ref: visionRef, inView: visionInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { ref: missionRef, inView: missionInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { ref: imageRef, inView: imageInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { ref: storyRef, inView: storyInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { ref: teamRef, inView: teamInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   const { ref: galleryRef, inView: galleryInView } = useInView({
     triggerOnce: true,
-    threshold: 0.1
-  })
+    threshold: 0.1,
+  });
 
   // const { ref: mapRef, inView: mapInView } = useInView({
   //   triggerOnce: true,
@@ -107,7 +107,7 @@ export const AboutUs: React.FC = () => {
 
   const fadeInVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   const handleNavigate = useCustomNavigate();
@@ -117,16 +117,17 @@ export const AboutUs: React.FC = () => {
   return (
     // Video
     <div style={{ overflow: "hidden" }}>
-      <Container maxWidth={false}
+      <Container
+        maxWidth={false}
         sx={{
           backgroundImage: {
             xs: `url('${Aflatoon}')`,
-            md: 'none'
+            md: "none",
           },
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           height: "100vh",
-          width: "100%"
+          width: "100%",
         }}
       >
         <video
@@ -135,20 +136,19 @@ export const AboutUs: React.FC = () => {
           muted
           playsInline={isSmallScreen}
           style={{
-            position: 'absolute',
-            display: isSmallScreen ? 'none' : 'block',
+            position: "absolute",
+            display: isSmallScreen ? "none" : "block",
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: -1
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1,
           }}
           src={DhairyaWorkingVideo}
         />
         <Navbar />
       </Container>
-
 
       {/* About Us */}
       <Container>
@@ -167,7 +167,7 @@ export const AboutUs: React.FC = () => {
             marginTop: 15,
             position: "relative",
             top: "25px",
-            left: "10px"
+            left: "10px",
           }}
         >
           We Are VRT
@@ -203,8 +203,8 @@ export const AboutUs: React.FC = () => {
               fontFamily={theme.typography.fontFamily}
             >
               Our vision is to revolutionize rocketry through innovation and
-              teamwork. We aim to break barriers and reach new heights,
-              setting new standards in the field.
+              teamwork. We aim to break barriers and reach new heights, setting
+              new standards in the field.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -244,7 +244,7 @@ export const AboutUs: React.FC = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            margin: 2
+            margin: 2,
           }}
         >
           <img
@@ -256,12 +256,11 @@ export const AboutUs: React.FC = () => {
               height: "80%",
               padding: 16,
               margin: 15,
-              border: "2px solid white"
+              border: "2px solid white",
             }}
           />
         </Box>
       </Container>
-
 
       {/* Placeholder Section */}
       <Box
@@ -281,7 +280,7 @@ export const AboutUs: React.FC = () => {
           alignItems: "center",
           justifyContent: "center",
           marginTop: 15,
-          boxSizing: "border-box"
+          boxSizing: "border-box",
         }}
       >
         <Stack
@@ -299,7 +298,7 @@ export const AboutUs: React.FC = () => {
             variant="h3"
             sx={{
               color: "white",
-              fontFamily: theme.typography.fontFamily
+              fontFamily: theme.typography.fontFamily,
             }}
           >
             OUR STORY
@@ -314,14 +313,13 @@ export const AboutUs: React.FC = () => {
                 backgroundColor: "yellow",
                 color: "black",
               },
-              fontFamily: theme.typography.fontFamily
+              fontFamily: theme.typography.fontFamily,
             }}
           >
             VRT Timeline
           </Button>
         </Stack>
       </Box>
-
 
       {/* Team Members */}
       <Typography
@@ -338,8 +336,8 @@ export const AboutUs: React.FC = () => {
           fontFamily: theme.typography.fontFamily,
           marginTop: isSmallScreen ? 17 : 22,
           marginBottom: { xs: 10, md: -20 },
-          alignItems: 'center',
-          justifyContent: 'center'
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         Leadership
@@ -363,7 +361,7 @@ export const AboutUs: React.FC = () => {
                 padding: 2,
                 borderRadius: "5px",
                 // boxShadow: 3,
-                marginBottom: 2
+                marginBottom: 2,
               }}
             >
               <img
@@ -374,7 +372,7 @@ export const AboutUs: React.FC = () => {
                   height: "auto",
                   marginBottom: 2,
                   fontFamily: theme.typography.fontFamily,
-                  borderRadius: "5px"
+                  borderRadius: "5px",
                 }}
               />
             </Stack>
@@ -382,7 +380,7 @@ export const AboutUs: React.FC = () => {
               variant="h6"
               style={{
                 fontFamily: theme.typography.fontFamily,
-                textAlign: 'center'
+                textAlign: "center",
               }}
             >
               {member.name}
@@ -393,7 +391,7 @@ export const AboutUs: React.FC = () => {
               color="textSecondary"
               style={{
                 fontFamily: theme.typography.fontFamily,
-                textAlign: 'center'
+                textAlign: "center",
               }}
             >
               {member.role}
@@ -403,17 +401,16 @@ export const AboutUs: React.FC = () => {
               sx={{
                 marginTop: 2,
                 backgroundColor: "white",
-                display: 'flex',
-                margin: '0 auto',
-                borderColor:
-                  "black",
+                display: "flex",
+                margin: "0 auto",
+                borderColor: "black",
                 ":hover": {
                   backgroundColor: "#90B8F8",
                   color: "white",
                 },
               }}
               style={{
-                fontFamily: theme.typography.fontFamily
+                fontFamily: theme.typography.fontFamily,
               }}
             >
               Read Bio
@@ -421,7 +418,6 @@ export const AboutUs: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-
 
       {/* Gallery section */}
       <Grid
@@ -440,7 +436,7 @@ export const AboutUs: React.FC = () => {
             height: "300px",
             backgroundColor: "black",
             alignItem: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Typography
@@ -453,7 +449,7 @@ export const AboutUs: React.FC = () => {
               alignItem: "center",
               textAlign: "center",
               justifyContent: "center",
-              padding: "10px 20px"
+              padding: "10px 20px",
             }}
           >
             We prioritize hardware over people
@@ -461,7 +457,6 @@ export const AboutUs: React.FC = () => {
         </Stack>
         <Galleries />
       </Grid>
-
 
       {/* Map Section */}
 
@@ -508,7 +503,6 @@ export const AboutUs: React.FC = () => {
       {/* <Box sx={{ margin: -4 }}> */}
       <Footer isSmallScreen={isSmallScreen} />
       {/* </Box> */}
-
     </div>
   );
 };
